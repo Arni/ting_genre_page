@@ -7,19 +7,6 @@
 include_once 'ting_genre_page.features.inc';
 
 /**
- * Implements hook_menu().
- */
-function ting_genre_page_menu() {
-	$items['admin/config/ting/genre-page'] = array(
-		'title' => 'Genre page test',
-		'page callback' => 'drupal_get_form',
-		'page arguments' => array('ting_genre_page_test_form'),
-		'access callback' => TRUE,
-	);
-	return $items;
-}
-
-/**
  * Implements hook_ctools_plugin_directory().
  *
  * It simply tells panels where to find the .inc files that define various
@@ -70,9 +57,9 @@ function template_preprocess_ting_genre_page_related_content(&$variables) {
     2 => 'group-blocks--third',
     3 => 'group-blocks--fourth',
   );
+  // Setup each row of nodes
   $rows = array();	
 	$offset = 0;
-	// Setup each row of nodes
 	while ($offset < count($nodes)) {
 		$row_nodes = array_slice($nodes, $offset, $nodes_pr_row);
 		// Get the actual row count (there might not be enough nodes)

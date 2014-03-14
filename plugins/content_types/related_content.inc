@@ -2,7 +2,7 @@
 
 $plugin = array(
   'title' => t('Related content'),
-  'description' => t('Show a number or nodes with relevant info'),
+  'description' => t('Show related (based on tags) events and news.'),
   'single' => TRUE,
   'content_types' => array('related_content'),
   'render callback' => 'related_content_content_type_render',
