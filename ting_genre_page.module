@@ -97,7 +97,18 @@ function template_preprocess_ting_genre_page_related_content(&$variables) {
 		$rows[$row_classes[$row_count]]['columns'] = $columns;
 	}
 	$variables['rows'] = empty($rows) ? FALSE : $rows;
-	//file_put_contents("/home/drupalpro/debug/debug.txt", print_r($image, TRUE), FILE_APPEND);	
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Adds form atltering CSS to genre page node edit form.
+ */
+function ting_genre_page_form_alter(&$form, &$form_state, $form_id) {
+	if ($form_id == 'genre_page_node_form') {
+		$module_path = drupal_get_path('module', 'ting_genre_page');
+		$form['#attached']['css'][] = $module_path . 'css/ting_genre_page.form.css';
+	}
 }
 
 /**

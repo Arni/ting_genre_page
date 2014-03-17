@@ -8,7 +8,6 @@ $plugin = array(
   'render callback' => 'related_content_content_type_render',
   'required context' => new ctools_context_required(t('Node'), 'node'),
   'category' => t('Ting'),
-  'render last' => TRUE,
 );
 
 /**
