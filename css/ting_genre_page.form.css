@@ -2,4 +2,26 @@
    CSS alterations to the genre page node edit form
    ========================================================================== */
 
- 
+
+#edit-field-collection-related-links .field-multiple-table thead label {
+ 	margin-left: 5px;
+}	
+
+#edit-field-collection-related-links .field-multiple-table tbody .field-type-text,
+#edit-field-collection-related-links .field-multiple-table tbody .field-type-image {
+	float: left;
+	width: 33.33333%;
+	margin-bottom: 15px;
+}
+
+#edit-field-collection-related-links .field-multiple-table tbody a,
+#edit-field-collection-related-links .field-multiple-table tbody input {
+	max-width: 95%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#edit-field-collection-related-links .field-multiple-table tbody .form-submit {
+	display: block;
+	clear: both;
+}

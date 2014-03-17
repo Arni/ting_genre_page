@@ -32,6 +32,12 @@ function ting_genre_page_theme($existing, $type, $theme, $path) {
 			'template' => 'ting-genre-page-related-content',
 			'path' => $path . '/templates'
 		),
+		'ting_genre_page_link_group' => array(
+			'variables' => array(
+				'link_items' => array(),
+				'links_pr_row' => 4,
+			),
+		),
 	);
 }
 
@@ -106,8 +112,8 @@ function template_preprocess_ting_genre_page_related_content(&$variables) {
  */
 function ting_genre_page_form_alter(&$form, &$form_state, $form_id) {
 	if ($form_id == 'genre_page_node_form') {
-		$module_path = drupal_get_path('module', 'ting_genre_page');
-		$form['#attached']['css'][] = $module_path . 'css/ting_genre_page.form.css';
+		$path = drupal_get_path('module', 'ting_genre_page');
+		$form['#attached']['css'][] = $path . '/css/ting_genre_page.form.css';
 	}
 }
 
