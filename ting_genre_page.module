@@ -111,10 +111,37 @@ function template_preprocess_ting_genre_page_related_content(&$variables) {
  * Adds form atltering CSS to genre page node edit form.
  */
 function ting_genre_page_form_alter(&$form, &$form_state, $form_id) {
-	if ($form_id == 'genre_page_node_form') {
+	/*if ($form_id == 'genre_page_node_form') {
 		$path = drupal_get_path('module', 'ting_genre_page');
 		$form['#attached']['css'][] = $path . '/css/ting_genre_page.form.css';
+	}*/
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alters the form widget for the field_collection field.
+ */
+function ting_genre_page_form_genre_page_node_form_alter(&$form, &$form_state) {
+	// Store the field name for clearner syntax.
+	$field_name = 'field_collection_related_links';
+	$language = $form[$field_name]['#language'];
+	$children = element_children($form[$field_name][$language]);
+	// Remove the 'add_more' element.
+	array_pop($children);
+	foreach ($children as $delta) {
+		$field_row = &$form[$field_name][$language][$delta];
+		
+		$field_row['field_related_link_title'][$language][0]['value']['#size'] = 45;
+		$field_row['field_related_link_url'][$language][0]['value']['#size'] = 45;
 	}
+	$css = '.field-name-field-collection-related-links .form-wrapper { 
+		display: inline-block;
+	}';
+	$form[$field_name]['#attached']['css'] = array(
+		$css => array('type' => 'inline'),
+	);
+	file_put_contents("/home/drupalpro/debug/debug.txt", print_r($form[$field_name], TRUE), FILE_APPEND);
 }
 
 /**
@@ -143,11 +170,8 @@ function ting_genre_page_get_events_with_terms($tids, $count_limit, $time_limit)
 		->fieldCondition('field_ding_event_tags', 'tid', $tids)
 		// Limit the result to events that hasn't completed yet.
 		->fieldCondition('field_ding_event_date', 'value2', $now, '>')
-		// Add the supplied $time_limit contraint to our query.
 		->fieldCondition('field_ding_event_date', 'value', $time_limit, '<=')
-		// Get the events with the nearest start datetime.
 		->fieldOrderBy('field_ding_event_date', 'value', 'ASC')
-		// Add the supplied $count_limit constraint.
 		->range(0, $count_limit);
 	$result = $query->execute();
 	$events = array();
@@ -156,7 +180,6 @@ function ting_genre_page_get_events_with_terms($tids, $count_limit, $time_limit)
 		$events = node_load_multiple($nids);
 	}
 	return $events;
-
 }
 
 /**

@@ -39,7 +39,7 @@ function ting_genre_page_related_links_content_type_render($subtype, $conf, $arg
         'alt' => $image['alt'],
       ));
       $content = $image;
-      file_put_contents("/home/drupalpro/debug/debug1.txt", print_r($image, TRUE), FILE_APPEND);
+      // file_put_contents("/home/drupalpro/debug/debug1.txt", print_r($image, TRUE), FILE_APPEND);
     }
   }
   $block->content = $content;
