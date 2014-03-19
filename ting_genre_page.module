@@ -30,14 +30,79 @@ function ting_genre_page_theme($existing, $type, $theme, $path) {
 				'nodes_pr_row' => 4,
 			),
 			'template' => 'ting-genre-page-related-content',
-			'path' => $path . '/templates'
+			'path' => $path . '/templates',
 		),
 		'ting_genre_page_link_group' => array(
 			'variables' => array(
 				'link_items' => array(),
-				'links_pr_row' => 4,
+				'links_items_pr_row' => 4,
 			),
+			'template' => 'ting-genre-page-link-group',
+			'path' => $path . '/templates',
 		),
+	);
+}
+
+/**
+ * Preprocess function a ting genre page link group.
+ */
+function template_preprocess_ting_genre_page_link_group(&$variables) {
+	$link_items = $variables['link_items'];
+	$link_items_count = count($link_items);
+	$links_items_pr_row = $variables['links_items_pr_row'];
+	$links_items_pr_row = $links_items_pr_row < 1 ? 1 : $links_items_pr_row;
+	$links_items_pr_row = $links_items_pr_row > 4 ? 4 : $links_items_pr_row;
+
+	$row_classes = _ting_genre_page_link_group_row_classes();
+  $column_classes = _ting_genre_page_link_group_coloumn_classes();	
+
+  // Setup each row of link items
+	$rows = array();
+	$offset = 0;
+	while ($offset < $link_items_count) {
+		$row_links = array_slice($link_items, $offset, $links_items_pr_row);
+		// Get the actual row count (there might not be enough)
+		$row_count = count($row_links);
+		$offset += $row_count;
+		// Setup each column of the row.
+		$columns = array();
+		foreach ($row_links as $key => $link) {
+			$columns[$column_classes[$key]] = array(
+				'title' => check_plain($link['title']),
+				'url' => url($link['url']),
+				'image' => $link['image'],
+			);
+		}
+		$row_class = $row_classes[$row_count]; 
+		$rows[] = array(
+			'columns' => $columns,
+			'class' => $row_class,
+		);
+	}
+	$variables['rows'] = $rows;
+}
+
+/**
+ * Wrapper function to hold row classes for a link group.
+ */
+function _ting_genre_page_link_group_row_classes() {
+	return array(
+		1 => 'group-blocks--one',
+		2 => 'group-blocks--two',
+		3 => 'group-blocks--three',
+		4 => 'group-blocks--four',
+	);
+}
+
+/**
+ * Wrapper function to hold column classes for a link group.
+ */
+function _ting_genre_page_link_group_coloumn_classes() {
+	return array(
+    0 => 'group-blocks--first',
+    1 => 'group-blocks--second',
+    2 => 'group-blocks--third',
+    3 => 'group-blocks--fourth',		
 	);
 }
 
@@ -51,18 +116,8 @@ function template_preprocess_ting_genre_page_related_content(&$variables) {
 	// implementation we show them together, events first and news last.
 	$nodes = array_merge($events, $news);
 	$nodes_pr_row = $variables['nodes_pr_row'];
-	$row_classes = array(
-		1 => 'group-blocks--one',
-		2 => 'group-blocks--two',
-		3 => 'group-blocks--three',
-		4 => 'group-blocks--four',
-	);
-  $column_classes = array(
-    0 => 'group-blocks--first',
-    1 => 'group-blocks--second',
-    2 => 'group-blocks--third',
-    3 => 'group-blocks--fourth',
-  );
+	$row_classes = _ting_genre_page_link_group_row_classes();
+  $column_classes = _ting_genre_page_link_group_coloumn_classes();
   // Setup each row of nodes
   $rows = array();	
 	$offset = 0;
@@ -111,10 +166,10 @@ function template_preprocess_ting_genre_page_related_content(&$variables) {
  * Adds form atltering CSS to genre page node edit form.
  */
 function ting_genre_page_form_alter(&$form, &$form_state, $form_id) {
-	/*if ($form_id == 'genre_page_node_form') {
+	if ($form_id == 'genre_page_node_form') {
 		$path = drupal_get_path('module', 'ting_genre_page');
 		$form['#attached']['css'][] = $path . '/css/ting_genre_page.form.css';
-	}*/
+	}
 }
 
 /**
@@ -124,24 +179,24 @@ function ting_genre_page_form_alter(&$form, &$form_state, $form_id) {
  */
 function ting_genre_page_form_genre_page_node_form_alter(&$form, &$form_state) {
 	// Store the field name for clearner syntax.
-	$field_name = 'field_collection_related_links';
+	/*$field_name = 'field_collection_related_links';
 	$language = $form[$field_name]['#language'];
 	$children = element_children($form[$field_name][$language]);
 	// Remove the 'add_more' element.
 	array_pop($children);
 	foreach ($children as $delta) {
 		$field_row = &$form[$field_name][$language][$delta];
-		
-		$field_row['field_related_link_title'][$language][0]['value']['#size'] = 45;
-		$field_row['field_related_link_url'][$language][0]['value']['#size'] = 45;
+
+		$field_row['field_related_link_title'][$language][0]['value']['#size'] = 35;
+		$field_row['field_related_link_url'][$language][0]['value']['#size'] = 35;
 	}
 	$css = '.field-name-field-collection-related-links .form-wrapper { 
 		display: inline-block;
 	}';
 	$form[$field_name]['#attached']['css'] = array(
 		$css => array('type' => 'inline'),
-	);
-	file_put_contents("/home/drupalpro/debug/debug.txt", print_r($form[$field_name], TRUE), FILE_APPEND);
+	);*/
+	//file_put_contents("/home/drupalpro/debug/debug.txt", print_r($form[$field_name], TRUE), FILE_APPEND);
 }
 
 /**
