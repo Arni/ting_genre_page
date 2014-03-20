@@ -355,7 +355,7 @@ function ting_genre_page_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_inspiration_list_raw_count',
     'label' => 'Inspiration list raw count',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'max' => 1000,
       'min' => 100,
@@ -500,7 +500,7 @@ function ting_genre_page_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_new_materials_row_count',
     'label' => 'New materials row count',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'max' => 10,
       'min' => 0,
