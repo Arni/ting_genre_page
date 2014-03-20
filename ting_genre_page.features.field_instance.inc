@@ -796,6 +796,46 @@ If 0 is selected here all the related content will link to \'News\' type content
     ),
   );
 
+  // Exported field_instance: 'node-genre_page-field_ting_search_context'
+  $field_instances['node-genre_page-field_ting_search_context'] = array(
+    'bundle' => 'genre_page',
+    'deleted' => 0,
+    'description' => 'Rate the node in different contexts.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ting_search_context',
+    'label' => 'Search context',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'ting_search_context',
+      'settings' => array(),
+      'type' => 'ting_search_context_select',
+      'weight' => 39,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
@@ -810,10 +850,12 @@ If 0 is selected here all the related content will link to \'News\' type content
   t('Limit period');
   t('New materials row count');
   t('New materials search query');
+  t('Rate the node in different contexts.');
   t('Related content count');
   t('Related event count');
   t('Related event time limit');
   t('Related links');
+  t('Search context');
   t('Select a time constraint for related events. Events with a start time later than this constraint will not be shown as related events. ');
   t('Select how many of the related content link that should link to \'Event\' content. The rest of the available spots will be used for links to \'News\' content. 
 If 0 is selected here all the related content will link to \'News\' type content.');
