@@ -43,6 +43,7 @@ function ting_genre_page_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
+    'panels_everywhere_site_template' => '',
   );
   $display = new panels_display();
   $display->layout = '25_50_25';
@@ -141,8 +142,8 @@ function ting_genre_page_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-4';
     $pane->panel = 'main_content';
-    $pane->type = 'related_content';
-    $pane->subtype = 'related_content';
+    $pane->type = 'related_links';
+    $pane->subtype = 'related_links';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -160,6 +161,28 @@ function ting_genre_page_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-4'] = $pane;
     $display->panels['main_content'][2] = 'new-4';
+    $pane = new stdClass();
+    $pane->pid = 'new-5';
+    $pane->panel = 'main_content';
+    $pane->type = 'related_content';
+    $pane->subtype = 'related_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['main_content'][3] = 'new-5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

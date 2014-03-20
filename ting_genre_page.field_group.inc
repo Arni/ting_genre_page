@@ -13,6 +13,35 @@ function ting_genre_page_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_genre_page_new_materials|node|genre_page|default';
+  $field_group->group_name = 'group_genre_page_new_materials';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'genre_page';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'New materials',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_ddelibra_new_search',
+      1 => 'field_ting_new_materials_limit',
+      2 => 'field_ting_new_materials_search',
+      3 => 'field_new_materials_row_count',
+    ),
+    'format_type' => 'hidden',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_genre_page_new_materials|node|genre_page|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_genre_page_new_materials|node|genre_page|form';
   $field_group->group_name = 'group_genre_page_new_materials';
   $field_group->entity_type = 'node';
@@ -39,6 +68,35 @@ function ting_genre_page_field_group_info() {
     ),
   );
   $export['group_genre_page_new_materials|node|genre_page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_related_content|node|genre_page|default';
+  $field_group->group_name = 'group_related_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'genre_page';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Related content',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_ting_genre_page_tags',
+      1 => 'field_related_content_count',
+      2 => 'field_related_event_count',
+      3 => 'field_related_event_time_limit',
+    ),
+    'format_type' => 'hidden',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_related_content|node|genre_page|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -98,6 +156,35 @@ function ting_genre_page_field_group_info() {
     ),
   );
   $export['group_related_links|node|genre_page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_ting_inspiration_list|node|genre_page|default';
+  $field_group->group_name = 'group_ting_inspiration_list';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'genre_page';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Inspiration list',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_ddelibra_inspiration_list',
+      1 => 'field_inspiration_list_search',
+      2 => 'field_inspiration_list_row_count',
+      3 => 'field_inspiration_list_raw_count',
+    ),
+    'format_type' => 'hidden',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_ting_inspiration_list|node|genre_page|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

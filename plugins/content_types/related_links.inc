@@ -30,7 +30,6 @@ function ting_genre_page_related_links_content_type_render($subtype, $conf, $arg
     $fc_wrapper = entity_metadata_wrapper('field_collection_item', $link);
     $title = $fc_wrapper->field_related_link_title->value();
     $url = $fc_wrapper->field_related_link_url->value();
-    $image = $fc_wrapper->field_related_link_image->value();
     $image = ting_genre_page_related_links_prepare_image($link);
     $link_items[] = array(
       'title' => $title,

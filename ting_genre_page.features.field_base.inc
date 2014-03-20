@@ -39,6 +39,26 @@ function ting_genre_page_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field_collection_related_links'
+  $field_bases['field_collection_related_links'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_collection_related_links',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 1,
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'path' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
+  );
+
   // Exported field_base: 'field_ddelibra_inspiration_list'
   $field_bases['field_ddelibra_inspiration_list'] = array(
     'active' => 1,
@@ -59,7 +79,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
@@ -89,7 +109,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
@@ -108,7 +128,7 @@ function ting_genre_page_field_default_field_bases() {
     'field_name' => 'field_inspiration_list_raw_count',
     'foreign keys' => array(),
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'profile2_private' => FALSE,
@@ -126,7 +146,7 @@ function ting_genre_page_field_default_field_bases() {
     'field_name' => 'field_inspiration_list_row_count',
     'foreign keys' => array(),
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'profile2_private' => FALSE,
@@ -155,7 +175,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
@@ -174,7 +194,7 @@ function ting_genre_page_field_default_field_bases() {
     'field_name' => 'field_new_materials_row_count',
     'foreign keys' => array(),
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'number',
     'settings' => array(
       'profile2_private' => FALSE,
@@ -196,7 +216,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'value',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
@@ -226,7 +246,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'value',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
@@ -272,7 +292,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'value',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
@@ -292,7 +312,7 @@ function ting_genre_page_field_default_field_bases() {
   // Exported field_base: 'field_related_link_image'
   $field_bases['field_related_link_image'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_related_link_image',
@@ -309,7 +329,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'fid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
@@ -323,7 +343,7 @@ function ting_genre_page_field_default_field_bases() {
   // Exported field_base: 'field_related_link_title'
   $field_bases['field_related_link_title'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_related_link_title',
@@ -340,7 +360,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
@@ -353,7 +373,7 @@ function ting_genre_page_field_default_field_bases() {
   // Exported field_base: 'field_related_link_url'
   $field_bases['field_related_link_url'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_related_link_url',
@@ -370,7 +390,7 @@ function ting_genre_page_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
