@@ -439,29 +439,5 @@ function ting_genre_page_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_ting_search_context'
-  $field_bases['field_ting_search_context'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ting_search_context',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'name' => array(
-        0 => 'name',
-      ),
-      'rating' => array(
-        0 => 'rating',
-      ),
-    ),
-    'label' => 'Search context',
-    'locked' => 1,
-    'module' => 'ting_search_context',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'ting_search_context',
-  );
-
   return $field_bases;
 }
