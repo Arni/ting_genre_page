@@ -10,6 +10,136 @@
 function ting_genre_page_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_collection_related_links-field_related_link_image'
+  $field_instances['field_collection_item-field_collection_related_links-field_related_link_image'] = array(
+    'bundle' => 'field_collection_related_links',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_related_link_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'ding_content' => 0,
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+          'youtube' => 0,
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_collection_related_links-field_related_link_title'
+  $field_instances['field_collection_item-field_collection_related_links-field_related_link_title'] = array(
+    'bundle' => 'field_collection_related_links',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_related_link_title',
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_collection_related_links-field_related_link_url'
+  $field_instances['field_collection_item-field_collection_related_links-field_related_link_url'] = array(
+    'bundle' => 'field_collection_related_links',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_related_link_url',
+    'label' => 'Url',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-genre_page-body'
   $field_instances['node-genre_page-body'] = array(
     'bundle' => 'genre_page',
@@ -673,6 +803,7 @@ If 0 is selected here all the related content will link to \'News\' type content
   t('DDELibra New Materials search query');
   t('If set the Inspiration list fetches search result from DDELibra instead of Datawell.');
   t('If used new materials list is fetched from DDELibra instead of datawell. To limit new materials to certain amount of days use the code rh=amountofdays (E.g. rh=90).');
+  t('Image');
   t('Inspiration list raw count');
   t('Inspiration list row count');
   t('Inspirations list search query');
@@ -692,6 +823,8 @@ If 0 is selected here all the related content will link to \'News\' type content
   t('The number of rows for this new materials list.');
   t('The number of rows in the inspiration list.');
   t('The raw result count.');
+  t('Title');
+  t('Url');
 
   return $field_instances;
 }
