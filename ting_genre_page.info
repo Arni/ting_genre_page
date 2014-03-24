@@ -5,6 +5,7 @@ package = Ding!
 php = 5.2.4
 version = 7.x-0.1
 project = ting_genre_page
+
 dependencies[] = cs_adaptive_image
 dependencies[] = ctools
 dependencies[] = ding_content
@@ -26,6 +27,8 @@ dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = ting_inspiration_list
 dependencies[] = ting_new_materials
+
+;Features:
 features[ctools][] = field_group:field_group:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
@@ -89,3 +92,6 @@ features[variable][] = menu_parent_genre_page
 features[variable][] = node_options_genre_page
 features[variable][] = node_preview_genre_page
 features[variable][] = node_submitted_genre_page
+
+;Exclude this field as it is added by the ting search context module itself.
+features_exclude[field][node-genre_page-field_ting_search_context] = node-genre_page-field_ting_search_context

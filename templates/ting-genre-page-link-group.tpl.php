@@ -13,7 +13,7 @@
 ?>
 
 <?php if ($rows): ?>
-	<div id="ting-genre-page-link-group" class="group-blocks--wrapper <?php print $classes ?>" <?php print $attributes ?>>
+	<div class="ting-genre-page-link-group genre-list-big group-blocks--wrapper <?php print $classes ?>" <?php print $attributes ?>>
 		<?php foreach ($rows as $row): ?>
 			<div class="<?php print $row['class']; ?> group-blocks--inner">
 				<?php foreach($row['columns'] as $column_class => $column): ?>
