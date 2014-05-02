@@ -129,25 +129,25 @@ function template_preprocess_ting_genre_page_related_content(&$variables) {
 		$coloumns = array();	
 		foreach ($row_nodes as $key => $node) {
 			// Display the title image with the cs_adaptive_image formatter.
-			$field_name = 'field_ding_event_title_image';
+			$field_name = 'field_ding_event_list_image';
 			if ($node->type == 'ding_news') {
-				$field_name = 'field_ding_news_title_image';
+				$field_name = 'field_ding_news_list_image';
 			}
 			$image = field_view_field('node', $node, $field_name, array(
-				'label' => 'hidden',
-				'type' => 'cs_adaptive_image',
-				'settings' => array(
-					'image_link' => '', // We take care of the linking ourself
-					'styles' => array(
-						'breakpoint_1' => 768, // px
-						'style_1' => 'ding_panorama_primary_large',
-						'breakpoint_2' => 480,
-						'style_2' => 'ding_panorama_primary_small',
-						'fallback_style' => 'ding_panorama_primary_large',
-						'max_style' => 'ding_panorama_primary_large',
-					),
-				), 
-			));
+        'label' => 'hidden',
+        'type' => 'cs_adaptive_image',
+        'settings' => array(
+          'image_link' => '', // We take care of the linking ourself
+          'styles' => array(
+            'breakpoint_1' => 768,
+            'style_1' => 'ting_related_links_medium',
+            'breakpoint_2' => 480,
+            'style_2' => 'ting_related_links_small',
+            'max_style' => 'ting_related_links_large',
+            'fallback_style' => 'large', // Use a Drupal default style as fallback
+          ),
+        ),
+        ));
 			// Setup the column.
 			$columns[$column_classes[$key]] = array(
 				'image' => $image,

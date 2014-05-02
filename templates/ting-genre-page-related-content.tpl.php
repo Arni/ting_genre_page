@@ -16,7 +16,7 @@
 ?>
 
 <?php if ($rows): ?>
-	<div id="ting-genre-page-related-content" class="group-blocks--wrapper">
+	<div id="ting-genre-page-related-content" class="group-blocks--wrapper genre-list-big">
 		<?php foreach ($rows as $row_class => $row): ?>
 			<div class="<?php print $row_class; ?> group-blocks--inner">
 				<?php foreach($row['columns'] as $column_class => $column): ?>
