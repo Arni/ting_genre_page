@@ -13,6 +13,11 @@
 ?>
 
 <?php if ($rows): ?>
+  <div class="related-links-header">
+    <div class="related-links-title">
+      <h1>Genveje</h1>
+    </div>
+  </div>
 	<div class="ting-genre-page-link-group genre-list-big group-blocks--wrapper <?php print $classes ?>" <?php print $attributes ?>>
 		<?php foreach ($rows as $row): ?>
 			<div class="<?php print $row['class']; ?> group-blocks--inner">

@@ -16,9 +16,14 @@
 ?>
 
 <?php if ($rows): ?>
+  <div class="related-content-header">
+    <div class="related-content-title">
+      <h1>Relateret indhold</h1>
+    </div>
+  </div>
 	<div id="ting-genre-page-related-content" class="group-blocks--wrapper genre-list-big">
 		<?php foreach ($rows as $row_class => $row): ?>
-			<div class="<?php print $row_class; ?> group-blocks--inner">
+			<div class="group-blocks--four group-blocks--inner">
 				<?php foreach($row['columns'] as $column_class => $column): ?>
 					<div class="<?php print $column_class; ?>">
 						<a href="<?php print $column['url']; ?>">
