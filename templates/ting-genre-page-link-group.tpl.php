@@ -24,8 +24,8 @@
 				<?php foreach($row['columns'] as $column_class => $column): ?>
 					<div class="<?php print $column_class; ?>">
 						<a href="<?php print $column['url']; ?>">
-							<?php print render($column['image']); ?>
-							<h2><?php print render($column['title']); ?></h2>
+              <h2><?php print render($column['title']); ?></h2>
+							<?php print render($column['image']); ?>							
 						</a>
 					</div>
 				<?php endforeach; ?>
