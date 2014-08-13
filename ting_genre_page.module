@@ -156,8 +156,6 @@ function template_preprocess_ting_genre_page_related_content(&$variables) {
 			);
 		}
 		$rows[$row_classes[$row_count]]['columns'] = $columns;
-        file_put_contents("/home/quickstart/work/debug/debuggenrerows1.txt", print_r($rows, TRUE), FILE_APPEND);
-    file_put_contents("/home/quickstart/work/debug/debuggenrerows1.txt", print_r('----------------------------------------', TRUE), FILE_APPEND);
 	}
 	$variables['rows'] = empty($rows) ? FALSE : $rows;
 }
