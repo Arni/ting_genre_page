@@ -274,7 +274,9 @@ function ting_genre_page_get_news_with_terms($tids, $count_limit) {
 function _ting_genre_page_get_setting($node, $field_name) {
 	if (isset($node->{$field_name}) && !empty($node->{$field_name})) {
 		$value = field_get_items('node', $node, $field_name);
-		return array_shift(array_shift(array_values($value)));
+    $value = array_values($value);
+    $value = array_shift($value);
+		return array_shift($value);
 	}
 	return FALSE;
 }
