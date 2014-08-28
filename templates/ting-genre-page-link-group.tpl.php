@@ -16,7 +16,7 @@
   <div class="genre-page-related-links">
     <div class="related-links-header">
       <div class="related-links-title">
-        <h1>Genveje</h1>
+<!--        <h1>Genveje</h1>-->
       </div>
     </div>
     <div class="ting-genre-page-link-group genre-list-big group-blocks--wrapper <?php print $classes ?>" <?php print $attributes ?>>
